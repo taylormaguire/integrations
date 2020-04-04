@@ -1,0 +1,54 @@
+{
+    "name": "codingfoundry/integrations",
+    "description": "Package for managing integration api keys and data",
+    "keywords": [
+        "codingfoundry",
+        "integrations"
+    ],
+    "homepage": "https://github.com/codingfoundry/integrations",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Taylor Maguire",
+            "email": "taylor@codingfoundry.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codingfoundry\\Integrations\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Codingfoundry\\Integrations\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codingfoundry\\Integrations\\IntegrationsServiceProvider"
+            ],
+            "aliases": {
+                "Integrations": "Codingfoundry\\Integrations\\IntegrationsFacade"
+            }
+        }
+    }
+}
